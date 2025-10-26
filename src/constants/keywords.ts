@@ -1,0 +1,15 @@
+export const KEYWORDS: string[] = [
+  'Lockpick',
+  'Flash drive',
+  'Pager',
+  'Briefcase',
+  'Keycard',
+  'Safe dial',
+  'Fingerprint',
+  'Badge wallet',
+  'Gloves',
+  'Sunglasses',
+  'Hoodie',
+  'Mask',
+  'Tracker',
+];

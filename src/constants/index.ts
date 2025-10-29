@@ -5,3 +5,4 @@ export * from './images';
 export * from './keywords';
 export * from './locations';
 export * from './robbers';
+export * from './loaderTime';

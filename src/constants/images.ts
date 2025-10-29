@@ -19,4 +19,6 @@ export const ITEMS = {
 
   Label: require('../assets/images/logo/label.png'),
   Icon: require('../assets/images/logo/icon.png'),
+
+  location: require('../assets/images/items/location.png'),
 };

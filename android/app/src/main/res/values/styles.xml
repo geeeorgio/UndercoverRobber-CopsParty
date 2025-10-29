@@ -6,4 +6,10 @@
         <item name="android:editTextBackground">@drawable/rn_edit_text_material</item>
     </style>
 
+    <style name="BootTheme" parent="Theme.BootSplash.EdgeToEdge">
+    <item name="android:windowBackground">@drawable/bootsplash_background</item>
+    <item name="android:windowSplashScreenBackground">@color/bootsplash_background</item>
+    <item name="android:windowFullscreen">true</item>
+</style>
+
 </resources>

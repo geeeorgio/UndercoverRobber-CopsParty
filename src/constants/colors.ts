@@ -5,6 +5,7 @@ export const COLORS = {
   brown: '#632800',
   lightRed: '#ff383c',
   darkRed: '#4c0f0f',
+  onboardingBckg: '#750648',
 
   redAccent: '#FF0000',
   yellowAccent: '#ffe418',
@@ -16,4 +17,13 @@ export const COLORS = {
 
   greenGradient: ['#058b00', '#48ff41'],
   yellowGradient: ['#ea6000', '#ffe418'],
+  redGradient: ['#ff383c', '#ff383c'],
+  brownGradient: ['#b14900', '#b14900'],
+};
+
+export const GradientMap = {
+  green: COLORS.greenGradient,
+  yellow: COLORS.yellowGradient,
+  red: COLORS.redGradient,
+  brown: COLORS.brownGradient,
 };

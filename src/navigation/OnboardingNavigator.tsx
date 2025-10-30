@@ -1,10 +1,10 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
 import {
   OnboardingScreen,
   OnboardingScreen1,
   OnboardingScreen2,
 } from 'src/screens';
-
 import type { OnboardingStackParamsList } from 'src/types/navigation/onboarding';
 
 const Onboard = createNativeStackNavigator<OnboardingStackParamsList>();

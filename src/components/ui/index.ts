@@ -13,8 +13,14 @@ import TermsSvg from './CustomIcons/TermsSvg';
 import CustomScreenWrapper from './CustomScreenWrapper/CustomScreenWrapper';
 import CustomSwitch from './CustomSwitch/CustomSwitch';
 import CustomText from './CustomText/CustomText';
+import DrawGameHeader from './DrawGameComponents/DrawGameHeader/DrawGameHeader';
+import DrawingCanvas from './DrawGameComponents/DrawingCanvas/DrawingCanvas';
 import HomeMenu from './HomeMenu/HomeMenu';
 import LocationGeneratingOverlay from './LocationGeneratingOverlay/LocationGeneratingOverlay';
+import CardContent from './MainGameComponets/CardContent/CardContent';
+import GameHeader from './MainGameComponets/GameHeader/GameHeader';
+import GameRoleCard from './MainGameComponets/GameRoleCard/GameRoleCard';
+import PauseModal from './MainGameComponets/PauseModal/PauseModal';
 import PlayerSetupInput from './MainGameComponets/PlayerSetupInput/PlayerSetupInput';
 import SetupHeader from './MainGameComponets/SetupHeader/SetupHeader';
 import StartMissionButton from './MainGameComponets/StartMissionButton/StartMissionButton';
@@ -44,4 +50,10 @@ export {
   PlayerSetupInput,
   StartMissionButton,
   LocationGeneratingOverlay,
+  GameHeader,
+  GameRoleCard,
+  CardContent,
+  PauseModal,
+  DrawingCanvas,
+  DrawGameHeader,
 };

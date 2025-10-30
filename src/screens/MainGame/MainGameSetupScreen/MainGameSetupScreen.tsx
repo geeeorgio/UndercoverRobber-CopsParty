@@ -1,5 +1,5 @@
 import { useNavigation } from '@react-navigation/native';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { ScrollView } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
@@ -12,11 +12,10 @@ import {
   SetupHeader,
   StartMissionButton,
 } from 'src/components/ui';
-import { SECONDARY_BACKGROUND } from 'src/constants';
 import { useAppDispatch, useAppSelector } from 'src/hooks/toolkit';
 import {
-  setBackground,
-  resetBackground,
+  setGameBackground,
+  setMainBackground,
 } from 'src/redux/slices/background/slice';
 import { startGame } from 'src/redux/slices/gameplay/slice';
 import { selectPlayers } from 'src/redux/slices/players/selectors';
@@ -66,9 +65,9 @@ const MainGameSetupScreen = () => {
 
   const handleStartMission = () => {
     if (players.length < 3) {
-      console.warn('Need at least 3 players to start game');
       return;
     }
+    dispatch(setMainBackground());
 
     const location = getRandomLocation();
     const keyword = getRandomKeyword();
@@ -91,8 +90,6 @@ const MainGameSetupScreen = () => {
 
     setIsGenerating(true);
 
-    dispatch(resetBackground());
-
     dispatch(
       startGameAction({
         playersWithRoles,
@@ -104,18 +101,11 @@ const MainGameSetupScreen = () => {
     dispatch(startGame());
 
     setTimeout(() => {
-      dispatch(setBackground(SECONDARY_BACKGROUND));
-
+      dispatch(setGameBackground());
       setIsGenerating(false);
       navigation.navigate('MainGameScreen');
     }, 1500);
   };
-
-  useEffect(() => {
-    return () => {
-      dispatch(resetBackground());
-    };
-  }, [dispatch]);
 
   return (
     <SafeAreaView style={styles.safeArea}>

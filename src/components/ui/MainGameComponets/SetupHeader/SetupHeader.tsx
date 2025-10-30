@@ -11,19 +11,24 @@ import {
   CustomText,
   PlusSvg,
 } from 'src/components/ui';
+import type { MainStackNavigationProp } from 'src/types/navigation/main';
 import { wp } from 'src/utils';
 
 interface SetupHeaderProps {
-  onAddPlayer: () => void;
+  onAddPlayer?: () => void;
 }
 
 const SetupHeader = ({ onAddPlayer }: SetupHeaderProps) => {
-  const navigation = useNavigation();
+  const navigation = useNavigation<MainStackNavigationProp>();
+
+  const handleGoBack = () => {
+    navigation.navigate('HomeScreen');
+  };
 
   return (
     <View style={styles.header}>
       <CustomButton
-        handlePress={() => navigation.goBack()}
+        handlePress={handleGoBack}
         extraStyle={styles.backButtonWrapper}
       >
         <CustomContainer

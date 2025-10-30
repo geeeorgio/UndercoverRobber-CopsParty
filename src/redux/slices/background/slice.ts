@@ -1,4 +1,3 @@
-import type { PayloadAction } from '@reduxjs/toolkit';
 import { createSlice } from '@reduxjs/toolkit';
 import type { ImageSourcePropType } from 'react-native';
 
@@ -16,10 +15,7 @@ const slice = createSlice({
   name: 'background',
   initialState,
   reducers: {
-    setBackground: (state, action: PayloadAction<ImageSourcePropType>) => {
-      state.currentBackground = action.payload;
-    },
-    resetBackground: (state) => {
+    setMainBackground: (state) => {
       state.currentBackground = MAIN_BACKGROUND;
     },
     setGameBackground: (state) => {
@@ -28,7 +24,6 @@ const slice = createSlice({
   },
 });
 
-export const { setBackground, resetBackground, setGameBackground } =
-  slice.actions;
+export const { setMainBackground, setGameBackground } = slice.actions;
 
 export const backgroundReducer = slice.reducer;

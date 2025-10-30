@@ -1,6 +1,6 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { DrawGameScreen, DrawGameSetupScreen } from 'src/screens';
 
+import { DrawGameScreen, DrawGameSetupScreen } from 'src/screens';
 import type { DrawGameStackParamsList } from 'src/types/navigation/drawGame';
 
 const DrawGame = createNativeStackNavigator<DrawGameStackParamsList>();

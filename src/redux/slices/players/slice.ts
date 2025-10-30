@@ -88,6 +88,7 @@ const slice = createSlice({
       state.location = action.payload.location;
       state.keyword = action.payload.keyword;
     },
+    resetPlayersState: () => initialState,
   },
 });
 
@@ -98,6 +99,7 @@ export const {
   resetPlayerSetup,
   removePlayer,
   startGameAction,
+  resetPlayersState,
 } = slice.actions;
 
 export const playersReducer = slice.reducer;

@@ -1,5 +1,6 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
+import DrawGameNavigator from './DrawGameNavigator';
 import MainGameNavigator from './MainGameNavigator';
 
 import { HomeScreen, RulesScreen, SettingsScreen } from 'src/screens';
@@ -21,11 +22,13 @@ const MainNavigator = () => {
     >
       <Main.Screen name={'HomeScreen'} component={HomeScreen} />
       <Main.Screen name={'MainGameStack'} component={MainGameNavigator} />
+      <Main.Screen name={'DrawGameStack'} component={DrawGameNavigator} />
       <Main.Screen
         name={'RulesScreen'}
         component={RulesScreen}
         options={{
           presentation: 'transparentModal',
+          animation: 'slide_from_bottom',
         }}
       />
       <Main.Screen
@@ -33,6 +36,7 @@ const MainNavigator = () => {
         component={SettingsScreen}
         options={{
           presentation: 'transparentModal',
+          animation: 'slide_from_right',
         }}
       />
     </Main.Navigator>

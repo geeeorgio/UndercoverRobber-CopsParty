@@ -25,10 +25,7 @@ const HomeMenu = () => {
   };
 
   const handleStartDrawGame = () => {
-    dispatch(setGameBackground());
-    navigation.navigate('DrawGameStack', {
-      screen: 'DrawGameSetupScreen',
-    });
+    navigation.navigate('DrawGameStack', { screen: 'DrawGameSetupScreen' });
   };
 
   const handleRulesPress = () => {

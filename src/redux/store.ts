@@ -12,6 +12,7 @@ import {
 } from 'redux-persist';
 
 import { backgroundReducer } from './slices/background/slice';
+import { drawGameReducer } from './slices/drawing/slice';
 import { gameplayReducer } from './slices/gameplay/slice';
 import { loaderReducer } from './slices/loader/slice';
 import { modeReducer } from './slices/mode/slice';
@@ -68,6 +69,7 @@ const store = configureStore({
     mode: modeReducer,
     loader: loaderReducer,
     background: backgroundReducer,
+    drawGame: drawGameReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({

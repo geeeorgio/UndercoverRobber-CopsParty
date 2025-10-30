@@ -6,7 +6,7 @@ import { Pressable } from 'react-native';
 import { styles } from './styles';
 
 interface CustomButtonProps {
-  children: ReactNode;
+  children?: ReactNode;
   handlePress?: () => void;
   isDisabled?: boolean;
   distance?: Insets;

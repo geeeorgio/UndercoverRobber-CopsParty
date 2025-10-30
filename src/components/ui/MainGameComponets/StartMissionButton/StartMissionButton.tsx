@@ -1,3 +1,4 @@
+import type { ReactNode } from 'react';
 import React from 'react';
 
 import { styles } from './styles';
@@ -6,9 +7,10 @@ import { CustomButton, CustomContainer, CustomText } from 'src/components/ui';
 
 interface StartMissionButtonProps {
   onPress: () => void;
+  btnText?: ReactNode;
 }
 
-const StartMissionButton = ({ onPress }: StartMissionButtonProps) => {
+const StartMissionButton = ({ onPress, btnText }: StartMissionButtonProps) => {
   return (
     <CustomButton
       handlePress={onPress}
@@ -17,7 +19,7 @@ const StartMissionButton = ({ onPress }: StartMissionButtonProps) => {
     >
       <CustomContainer variant="green" extraStyle={styles.startButton}>
         <CustomText extraStyle={styles.startButtonText}>
-          Start the Mission
+          {btnText || 'Start the Mission'}
         </CustomText>
       </CustomContainer>
     </CustomButton>

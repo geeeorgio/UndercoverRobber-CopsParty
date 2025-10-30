@@ -101,8 +101,8 @@ const MainGameSetupScreen = () => {
     dispatch(startGame());
 
     setTimeout(() => {
-      dispatch(setGameBackground());
       setIsGenerating(false);
+      dispatch(setGameBackground());
       navigation.navigate('MainGameScreen');
     }, 1500);
   };

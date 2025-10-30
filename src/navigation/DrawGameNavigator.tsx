@@ -14,7 +14,7 @@ const DrawGameNavigator = () => {
           backgroundColor: 'transparent',
         },
         gestureEnabled: false,
-        animation: 'fade',
+        animation: 'slide_from_right',
       }}
     >
       <DrawGame.Screen

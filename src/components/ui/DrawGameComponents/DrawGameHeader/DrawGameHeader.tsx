@@ -33,7 +33,7 @@ const DrawGameHeader = () => {
 
       <CustomContainer variant="green" extraStyle={styles.pauseContainer}>
         <CustomButton handlePress={handleTogglePause}>
-          <PauseSvg width={wp(18)} height={hp(18)} />
+          <PauseSvg width={wp(16)} height={hp(16)} />
         </CustomButton>
       </CustomContainer>
     </View>

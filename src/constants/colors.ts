@@ -31,9 +31,8 @@ export const GradientMap = {
 export const INITIAL_STROKE_WIDTH = 5;
 export const INITIAL_STROKE_COLOR = COLORS.darkRed;
 export const COLOR_OPTIONS = [
-  COLORS.redAccent,
   COLORS.roseAccent,
   COLORS.skinAccent,
   COLORS.blackAccent,
-  COLORS.yellowAccent,
+  COLORS.darkGreen,
 ];

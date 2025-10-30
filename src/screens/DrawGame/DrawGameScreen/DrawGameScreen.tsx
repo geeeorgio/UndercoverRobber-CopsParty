@@ -15,6 +15,7 @@ import {
   DrawGameHeader,
   DrawingCanvas,
   PauseModal,
+  ShareSvg,
 } from 'src/components/ui';
 import {
   COLOR_OPTIONS,
@@ -58,14 +59,9 @@ const DrawGameScreen = () => {
   const realRobber = suspectId
     ? ROBBERS[suspectId as keyof typeof ROBBERS]
     : null;
-  const suspectName = realRobber?.id || 'Unknown Suspect';
 
   const handleTogglePause = () => {
-    if (isPaused) {
-      dispatch(resumeGame());
-    } else {
-      dispatch(pauseGame());
-    }
+    dispatch(isPaused ? resumeGame() : pauseGame());
   };
 
   const handleShowRealFace = () => {
@@ -90,7 +86,7 @@ const DrawGameScreen = () => {
       <View style={styles.controlsContainer}>
         <CustomButton handlePress={handleUndo}>
           <CustomContainer variant="green" extraStyle={styles.controlContainer}>
-            <BackSvg width={wp(20)} height={hp(20)} style={styles.undoIcon} />
+            <BackSvg width={wp(25)} height={hp(25)} />
           </CustomContainer>
         </CustomButton>
 
@@ -103,7 +99,7 @@ const DrawGameScreen = () => {
             value={strokeWidth}
             onValueChange={setStrokeWidth}
             minimumTrackTintColor={COLORS.activeYellow}
-            maximumTrackTintColor={COLORS.blackAccent}
+            maximumTrackTintColor={COLORS.white}
             thumbTintColor={COLORS.white}
           />
         </View>
@@ -128,23 +124,27 @@ const DrawGameScreen = () => {
   const renderContent = () => {
     return (
       <View style={styles.contentContainer}>
-        <CustomContainer
-          variant="yellow"
-          extraStyle={styles.descriptionContainer}
-        >
-          <CustomText extraStyle={styles.traitText}>
-            {descriptionObj?.trait || 'No trait provided'}
-          </CustomText>
-        </CustomContainer>
+        {!isDrawingComplete && (
+          <>
+            <CustomContainer
+              variant="yellow"
+              extraStyle={styles.descriptionContainer}
+            >
+              <CustomText extraStyle={styles.text}>
+                {descriptionObj?.trait || 'No trait provided'}
+              </CustomText>
+            </CustomContainer>
 
-        <CustomContainer
-          variant="yellow"
-          extraStyle={styles.descriptionContainer}
-        >
-          <CustomText extraStyle={styles.personalityText}>
-            {descriptionObj?.personality || 'No personality provided'}
-          </CustomText>
-        </CustomContainer>
+            <CustomContainer
+              variant="yellow"
+              extraStyle={styles.descriptionContainer}
+            >
+              <CustomText extraStyle={styles.text}>
+                {descriptionObj?.personality || 'No personality provided'}
+              </CustomText>
+            </CustomContainer>
+          </>
+        )}
 
         {!isDrawingComplete ? (
           <>
@@ -156,14 +156,20 @@ const DrawGameScreen = () => {
           </>
         ) : (
           <View style={styles.resultContainer}>
-            <Image
-              source={realRobber?.image || ITEMS.Sketch}
-              style={styles.realFaceImage}
-              resizeMode="contain"
-            />
-            <CustomText extraStyle={styles.realFaceText}>
-              The Suspect is... {suspectName}
-            </CustomText>
+            <View style={styles.realFaceWrapper}>
+              <Image
+                source={realRobber?.image || ITEMS.Sketch}
+                style={styles.finalRobberImage}
+                resizeMode="contain"
+              />
+            </View>
+
+            <View style={styles.finalSketchWrapper}>
+              <DrawingCanvas
+                strokeColor={strokeColor}
+                strokeWidth={strokeWidth}
+              />
+            </View>
           </View>
         )}
 
@@ -173,7 +179,10 @@ const DrawGameScreen = () => {
               handlePress={handleShowRealFace}
               extraStyle={styles.actionButton}
             >
-              <CustomContainer variant="green">
+              <CustomContainer
+                variant="green"
+                extraStyle={styles.actionButtonContainer}
+              >
                 <CustomText extraStyle={styles.actionButtonText}>
                   Show Real Face
                 </CustomText>
@@ -185,17 +194,30 @@ const DrawGameScreen = () => {
                 handlePress={() => {}}
                 extraStyle={styles.halfButton}
               >
-                <CustomContainer variant="green">
-                  <CustomText extraStyle={styles.actionButtonText}>
+                <CustomContainer
+                  variant="green"
+                  extraStyle={styles.halfButtonContainer}
+                >
+                  <ShareSvg width={wp(16)} height={hp(16)} />
+                  <CustomText
+                    extraStyle={[
+                      styles.actionButtonText,
+                      styles.buttonTextWithIcon,
+                    ]}
+                  >
                     Share
                   </CustomText>
                 </CustomContainer>
               </CustomButton>
+
               <CustomButton
                 handlePress={handleHome}
                 extraStyle={styles.halfButton}
               >
-                <CustomContainer variant="yellow">
+                <CustomContainer
+                  variant="yellow"
+                  extraStyle={styles.halfButtonContainer}
+                >
                   <CustomText extraStyle={styles.actionButtonText}>
                     Home
                   </CustomText>

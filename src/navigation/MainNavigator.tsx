@@ -17,7 +17,7 @@ const MainNavigator = () => {
           backgroundColor: 'transparent',
         },
         gestureEnabled: false,
-        animation: 'fade',
+        animation: 'slide_from_right',
       }}
     >
       <Main.Screen name={'HomeScreen'} component={HomeScreen} />

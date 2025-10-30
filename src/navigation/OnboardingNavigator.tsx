@@ -18,7 +18,7 @@ const OnboardingNavigator = () => {
           backgroundColor: 'transparent',
         },
         gestureEnabled: false,
-        animation: 'fade',
+        animation: 'slide_from_right',
       }}
     >
       <Onboard.Screen name="OnboardingScreen" component={OnboardingScreen} />

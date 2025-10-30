@@ -19,7 +19,7 @@ const MainGameNavigator = () => {
           backgroundColor: 'transparent',
         },
         gestureEnabled: false,
-        animation: 'fade',
+        animation: 'slide_from_right',
       }}
     >
       <MainGame.Screen

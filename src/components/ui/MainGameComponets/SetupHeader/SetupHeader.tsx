@@ -11,6 +11,8 @@ import {
   CustomText,
   PlusSvg,
 } from 'src/components/ui';
+import { useAppDispatch } from 'src/hooks/toolkit';
+import { setMainBackground } from 'src/redux/slices/background/slice';
 import type { MainStackNavigationProp } from 'src/types/navigation/main';
 import { wp } from 'src/utils';
 
@@ -19,9 +21,11 @@ interface SetupHeaderProps {
 }
 
 const SetupHeader = ({ onAddPlayer }: SetupHeaderProps) => {
+  const dispatch = useAppDispatch();
   const navigation = useNavigation<MainStackNavigationProp>();
 
   const handleGoBack = () => {
+    dispatch(setMainBackground());
     navigation.navigate('HomeScreen');
   };
 

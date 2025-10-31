@@ -42,6 +42,7 @@ import { selectIsPaused } from 'src/redux/slices/gameplay/selectors';
 import { pauseGame, resumeGame } from 'src/redux/slices/gameplay/slice';
 import type { MainStackNavigationProp } from 'src/types/navigation/main';
 import { hp, wp } from 'src/utils';
+import { handleShare } from 'src/utils/shareUtils';
 
 const DrawGameScreen = () => {
   const dispatch = useAppDispatch();
@@ -191,7 +192,7 @@ const DrawGameScreen = () => {
           ) : (
             <View style={styles.buttonGroup}>
               <CustomButton
-                handlePress={() => {}}
+                handlePress={handleShare}
                 extraStyle={styles.halfButton}
               >
                 <CustomContainer

@@ -16,16 +16,17 @@ import {
 } from 'src/components/ui';
 import type { MainStackNavigationProp } from 'src/types/navigation/main';
 import { hp, wp } from 'src/utils';
+import { handleShare } from 'src/utils/shareUtils';
 
 const SettingsScreen = () => {
   const navigation = useNavigation<MainStackNavigationProp>();
 
   const handleTermsPress = () => {
-    console.log('Navigate to Terms');
+    return null;
   };
 
   const handleSharePress = () => {
-    console.log('Open Share Dialog');
+    handleShare();
   };
 
   return (

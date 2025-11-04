@@ -10,9 +10,7 @@ import HomeLogo from 'src/components/ui/HomeLogo/HomeLogo';
 const HomeScreen = () => {
   return (
     <SafeAreaView style={styles.container}>
-      <View style={styles.logoWrapper}>
-        <HomeLogo />
-      </View>
+      <View style={styles.logoWrapper}>{/* <HomeLogo /> */}</View>
 
       <View style={styles.menuContainer}>
         <HomeMenu />

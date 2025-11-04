@@ -6,6 +6,6 @@
     <item>
         <bitmap
             android:gravity="fill"
-            android:src="@drawable/diamond_loader" />
+            android:src="@drawable/win_day_loader" />
         </item>
 </layer-list>

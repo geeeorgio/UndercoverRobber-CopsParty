@@ -32,11 +32,11 @@ const OnboardingScreen = () => {
   return (
     <View style={[styles.main, { paddingTop: insets.top }]}>
       <View style={styles.logoWrapper}>
-        <Image
+        {/* <Image
           source={ITEMS.Onboarding1}
           resizeMode="contain"
           style={styles.logo}
-        />
+        /> */}
       </View>
 
       <View style={[styles.content, { paddingBottom: insets.bottom }]}>

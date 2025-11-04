@@ -79,7 +79,7 @@ android {
 
     namespace "com.undercoverrobbercopsparty"
     defaultConfig {
-        applicationId "com.undercoverrobbercopsparty"
+        applicationId "com.robbersdiamond"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1

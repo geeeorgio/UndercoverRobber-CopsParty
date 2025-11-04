@@ -6,6 +6,6 @@
     <item>
         <bitmap
             android:gravity="fill"
-            android:src="@drawable/loader" />
+            android:src="@drawable/diamond_loader" />
         </item>
 </layer-list>

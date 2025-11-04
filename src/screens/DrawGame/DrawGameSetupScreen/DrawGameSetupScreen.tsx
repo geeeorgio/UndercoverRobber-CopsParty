@@ -69,7 +69,7 @@ const DrawGameSetupScreen = () => {
         <View style={styles.centerContainer}>
           <View style={styles.imgWrapper}>
             <Image
-              source={ITEMS.TwoCops}
+              source={ITEMS.Onboarding2}
               resizeMode="contain"
               style={styles.copsImg}
             />

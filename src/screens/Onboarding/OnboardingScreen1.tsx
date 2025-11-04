@@ -33,7 +33,7 @@ const OnboardingScreen1 = () => {
     <View style={[styles.main, { paddingTop: insets.top }]}>
       <View style={styles.logoWrapper}>
         <Image
-          source={ITEMS.Rob5FemaleKey}
+          source={ITEMS.Onboarding2}
           resizeMode="contain"
           style={styles.logo}
         />
